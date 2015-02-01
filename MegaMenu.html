@@ -77,7 +77,9 @@
                 </div>
                 <div class="twelve wide column" id="mmRightColumn">
                     <div class="ui menu vertical" id="cardContainer">
-                        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                        <div class="item" style="width: 100%; height: 100%; max-width: none;">
+                            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                        </div>
                     </div>
 
                 </div>
@@ -98,7 +100,11 @@
       }
 
        #topBar #MegaMenuTrigger {
-           margin: 2px auto;
+           left: 0;
+           height: 40px;
+           width: 120px;
+           position: absolute;
+           border-radius: 0;
        }
          #breadcrumbs, #breadcrumbs a , #breadcrumbs .divider{
              color: whitesmoke;
@@ -109,20 +115,43 @@
           padding-right: 10px;
       }
 
+
+      #megaMenu {
+         font-family: myriad-pro, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+      #mmRightColumn .ui.menu a.item:not(:hover) {
+          color:rgba(0,0,0,.8) !important;
+      }
+      #mmRightColumn .ui.menu a.item:hover {
+          color:rgba(0,0,0,1);
+      }
+
+      #cardContainer > .item {
+         max-width: 250px;
+        /* apply only when more than 7 2nd tier items? 
+            or are 5 or more 2nd tier items with an average of 30 items?
+
+            apply custom max-widths by process ids?
+
+            we can controll process orders! :} (able to get short first if want)
+        */
+      } 
+
 </style>
     <div id="content">
 
 
 
-<pre>
-Comments:
+<p>
+    <h3>Comments:</h3>
 Need to decide what to do for long catalog items : eg(100s) & many second tier items (horizontal scroll is not fun)*
 Easy enough to hide left menu on click if desired for space
 
-TODO:
+    <h3>TODO:</h3>
 Nearby pages drop/pop down with 2nd/3rd tier options
 Recent pages? dropdown with last N?
-</pre>
+</p>
 
     </div>
 
@@ -137,6 +166,7 @@ Recent pages? dropdown with last N?
     <script src="libs/lorem-ipsum.js/generator.js"></script>
     <script src="js/cardGenerator.js"></script>
 
+    
     <!-- Init -->
     <script src="app/layout.js"></script>
 

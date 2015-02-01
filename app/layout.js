@@ -31,7 +31,8 @@
             },
             //onHide: expandLeftColumn,
             transition: 'fade right',
-            preserve: true
+            preserve: true,
+            setFluidWidth: false
         });
     
     $('#TopMenuButtons .ui.button').popup({
@@ -66,6 +67,15 @@
 
     }
 
+    $(window).resize(function () {
+        resizeMenu();
+    });
+
+    function resizeMenu() {
+        $('#mmLeftColumn .menu,   #cardContainer').height($(window).height() - 120);
+    }
+
+    resizeMenu();
 })();
 
 

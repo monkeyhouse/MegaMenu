@@ -11,7 +11,6 @@ $lgrey: gainsboro;
 * {
     padding: 0;
     margin: 0;
-    font-family: Verdana;
     box-sizing: border-box;
 } 
 
@@ -65,6 +64,8 @@ $lgrey: gainsboro;
             top: 80px;
             padding-left: 15px;
             bottom: 0;
+left:0;
+            right: 0;
         }
 
 
@@ -138,9 +139,22 @@ footer {
         padding: 0;
     }
 
-        #megaMenu, #mmLeftColumn .menu {
-            height: 600px;
+        #megaMenu, #mmLeftColumn .menu,   #cardContainer  {            
+            /*height: 600px;*/
         }
+
+    #megaMenu{
+        width:calc(100%-40px);
+        margin-left:20px;
+    }  
+
+     /*#mmRightColumn{
+        height:calc(100% - 100px);
+    }*/
+    #cardContainer{
+        /*height:500px;*/
+        height:100%;
+    }
 
     #cardContainer .item .menu {
         margin: 0;
@@ -152,7 +166,6 @@ footer {
         }
 
     #cardContainer {
-        height: 600px;
         width: 100%;
         overflow-x: scroll;
         display: flex;
@@ -166,6 +179,11 @@ footer {
         justify-content: flex-start;
     }
 
+
+        body{
+          overflow:hidden;
+
+        }
     /* site.css sample content*/
 
 
