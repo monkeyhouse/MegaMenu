@@ -72,39 +72,16 @@ footer {
 
 /* Destop Layout*/
 @media (min-width: 769px) {
-  #topMenu {
-    position: absolute;
-    width: 100%;
-    background-color: #5696bc;
-    height: 50px;
-    top: 40px; }
-
+  /*#topBar {
+      @include toolbar;
+  
+      background-color: $blue;
+      height: 50px;
+      top: 40px;
+    }*/
   #topnav .active {
     font-weight: normal; }
 
-  #sidenav {
-    width: 100%;
-    background-color: aliceblue; }
-
-  #sidenav .active {
-    background-color: white; }
-
-  #sideMenu {
-    background-color: #eee;
-    border-right: 1px solid gainsboro;
-    position: absolute;
-    top: 90px;
-    bottom: 40px;
-    width: 300px;
-    overflow: auto;
-    /*transition: all .3s ease .1s;
-        z-index: 10;*/ }
-
-  /*#sideMenu:hover {
-         width: 400px;
-        transition: all .2s ease-in-out .6s;
-        box-shadow: 2px 2px 7px 1px grey;
-      }*/
   #topnav {
     position: absolute;
     right: 0;
@@ -120,6 +97,33 @@ footer {
     padding: 10px; }
 
   /* desktop navigation */
+  #mmLeftColumn, #mmRightColumn {
+    padding: 0; }
+
+  #megaMenu, #mmLeftColumn .menu {
+    height: 600px; }
+
+  #cardContainer .item .menu {
+    margin: 0; }
+
+  #cardContainer .item .menu a {
+    padding-left: 0;
+    padding-bottom: 2px; }
+
+  #cardContainer {
+    height: 600px;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-align-content: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start; }
+
   /* site.css sample content*/ }
 
 @media (max-width: 768px) {
@@ -155,3 +159,5 @@ footer {
   #mobileNav .inline.field {
     margin-bottom: 5px; }
  }
+
+/*# sourceMappingURL=layout.css.map */
