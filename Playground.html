@@ -1,0 +1,218 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+
+    <div id="MegaMenuTrigger" class="ui button">Show fluid popup</div>
+    <div class="ui fluid popup" id="megaMenu">
+        <div class="ui divided grid">
+            <div class="four wide column" id="mmLeftColumn">
+                <div class="ui fluid vertical menu blue pointing">
+                    <a href="#" class="item ">Dolor sit.</a>
+                    <a href="#" class="item">Amet, consectetur.</a>
+                    <a href="#" class="item">Adipiscing elit.</a>
+                    <a href="#" class="item">Fusce vel.</a>
+                    <a href="#" class="item">Sapien elit.</a>
+                    <a href="#" class="item">In malesuada.</a>
+                    <a href="#" class="item">Semper mi.</a>
+
+                </div>
+            </div>
+            <div class="twelve wide column" id="mmRightColumn">
+                <div class="ui menu vertical" id="cardContainer">
+                    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        <link href="libs/Semantic/semantic.css" rel="stylesheet" />
+        <script src="libs/Jquery/jquery-2.1.3.js"></script>
+        <script src="libs/Semantic/semantic.js"></script>
+        <script src="libs/Jquery/Plugins/menuAim.js"></script>
+        <script src="libs/Jquery/Plugins/uniqueId.js"></script>
+
+        <script src="libs/Jquery/Plugins/zenCoding.js"></script>
+        <script src="libs/lorem-ipsum.js/generator.js"></script>
+        <script src="app/cardGenerator.js"></script>
+
+
+        <style>
+            #mmLeftColumn, #mmRightColumn {
+                padding: 0;
+            }
+
+                #megaMenu, #mmLeftColumn .menu {
+                    height: 600px;
+                }
+
+            #cardContainer .item .menu {
+                margin: 0;
+            }
+
+                #cardContainer .item .menu a {
+                    padding-left: 0;
+                    padding-bottom: 2px;
+                }
+
+            #cardContainer {
+                height: 600px;
+                width: 100%;
+                overflow-x: scroll;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-align-content: flex-start;
+                -webkit-align-content: flex-start;
+                align-content: flex-start;
+                justify-content: flex-start;
+            }
+        </style>
+
+
+        <script>
+
+            var lcolItems = $('#mmLeftColumn .menu:first-of-type .item');
+
+            lcolItems.uniqueId();
+
+            var rColOptions = {};
+            var cMin = 2, cMax = 8;
+
+            lcolItems.each(function (ix, item) {
+
+                var numCards = cMin + Math.floor(Math.random() * (cMax - cMin));
+
+                var cards = cardGenerator.createCards(numCards);
+
+                rColOptions[item.id] = cards;
+            });
+
+            (function () {
+
+                var $cardContainer = $('#cardContainer');
+                //var $lCol = $('#mmLeftColumn');
+                //function collapseLeftColumn() {
+                //    $lCol.removeClass('column').hide();
+                //    $rCol.removeClass('twelve wide').addClass('sixteen wide');
+                //    $lCol.removeClass('four wide column').attr('hidden', '');
+                //}
+
+                //function expandLeftColumn() {
+                //    $rCol.removeClass('sixteen wide column').addClass('twelve wide column');
+                //    $lCol.addClass('four wide column').removeAttr('hidden', '');
+                //}
+                //$('#mmLeftColumn .item').click(function () {
+                //    collapseLeftColumn();
+                //});
+
+
+                $('#MegaMenuTrigger')
+                    .popup({
+                        hoverable: true,
+                        position: 'bottom left',
+                        delay: {
+                            show: 200,
+                            hide: 200
+                        },
+                        //onHide: expandLeftColumn,
+                        transition: 'fade right',
+                        preserve: true
+                    });
+
+
+                $('#mmLeftColumn .menu').menuAim({
+                    activate: loadRightColumn,
+                    rowSelector: "> .item"
+                });
+
+                var selection = '';
+                function loadRightColumn(el) {
+                    var prevSelection = selection;
+                    selection = el.id;
+                    if (prevSelection !== selection) {
+                        var $el = $(el);
+                        $el.addClass('active');
+                        var frag = rColOptions[selection];
+                        rColOptions[prevSelection] = $cardContainer.html();
+                        $cardContainer.html(frag);
+                        $('#' + prevSelection).removeClass('active');
+                    }
+
+                }
+
+            })();
+
+        </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+<!-- Color Theme : http://www.colorcombos.com/color-schemes/6343/ColorCombo6343.html -->

@@ -1,0 +1,140 @@
+﻿/*colors*/
+/* browser reset*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana;
+  box-sizing: border-box; }
+
+/* header */
+#logo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 2em;
+  padding-left: 10px; }
+
+#settings {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  margin-right: 10px; }
+
+#settings #username {
+  color: white;
+  line-height: 40px;
+  display: inline-block;
+  padding-right: 10px; }
+
+/*shared layout features*/
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background-color: #2F5168; }
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #5696bc;
+  height: 40px; }
+
+/* Default Layout  Settings */
+#mobileNav {
+  display: none; }
+
+/* Destop Layout*/
+@media (min-width: 769px) {
+  #topMenu {
+    position: absolute;
+    width: 100%;
+    background-color: #5696bc;
+    height: 50px;
+    top: 40px; }
+
+  #topnav .active {
+    font-weight: normal; }
+
+  #sidenav {
+    width: 100%;
+    background-color: aliceblue; }
+
+  #sidenav .active {
+    background-color: white; }
+
+  #sideMenu {
+    background-color: #eee;
+    border-right: 1px solid gainsboro;
+    position: absolute;
+    top: 90px;
+    bottom: 40px;
+    width: 300px;
+    overflow: auto;
+    /*transition: all .3s ease .1s;
+        z-index: 10;*/ }
+
+  /*#sideMenu:hover {
+         width: 400px;
+        transition: all .2s ease-in-out .6s;
+        box-shadow: 2px 2px 7px 1px grey;
+      }*/
+  #topnav {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+
+  section#content {
+    background-color: white;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    bottom: 40px;
+    left: 300px;
+    padding: 10px; }
+
+  /* desktop navigation */
+  /* site.css sample content*/ }
+
+@media (max-width: 768px) {
+  #topnav, #sidenav {
+    display: none; }
+
+  section#content, #mobileNav, footer {
+    display: block;
+    float: left;
+    position: static;
+    width: 100%; }
+
+  #content, #mobileNav {
+    height: auto; }
+
+  section#content {
+    float: left;
+    width: 100%; }
+
+  #mobileNav {
+    margin-top: 40px;
+    background-color: #5696bc;
+    color: white; }
+
+  #mobileNav label {
+    font-family: Tahoma;
+    font-weight: bold;
+    width: 80px; }
+
+  #mobileNav .ui.search.dropdown {
+    width: calc(100% - 90px); }
+
+  #mobileNav .inline.field {
+    margin-bottom: 5px; }
+ }
+
+/*# sourceMappingURL=layout.css.map */
