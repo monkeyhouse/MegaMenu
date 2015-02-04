@@ -34,7 +34,14 @@
             preserve: true,
             setFluidWidth: false
         });
-    
+
+
+    $('#NearbyPages').dropdown({
+        onChange: function (value, text, $selectedItem) {
+            // custom action
+        }
+    });
+
     $('#TopMenuButtons .ui.button').popup({
         hoverable: true,
         position: 'bottom right',

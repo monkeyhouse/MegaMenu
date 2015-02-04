@@ -86,91 +86,136 @@
             </div>
         </div>
 
+        <div class="ui search dropdown button" id="NearbyPages">
+            <i class="search icon"></i>
+            <div class="default text">Nearby pages</div>
+
+            <div class="menu">
+               <!-- div.item*20>lorem5-->
+                <div class="item">Consectetur adipiscing elit fusce vel.</div>
+                <div class="item">Sapien elit in malesuada semper.</div>
+                <div class="item">Mi, id sollicitudin urna fermentum.</div>
+                <div class="item">Ut fusce varius nisl ac.</div>
+                <div class="item">Ipsum gravida vel pretium tellus.</div>
+                <div class="item">Tincidunt integer eu augue augue.</div>
+                <div class="item">Nunc elit dolor, luctus placerat.</div>
+                <div class="item">Scelerisque euismod, iaculis eu lacus.</div>
+                <div class="item">Nunc mi elit, vehicula ut.</div>
+                <div class="item">Laoreet ac, aliquam sit amet.</div>
+                <div class="item">Justo nunc tempor, metus vel.</div>
+                <div class="item">Placerat suscipit, orci nisl iaculis.</div>
+                <div class="item">Eros, a tincidunt nisi odio.</div>
+                <div class="item">Eget lorem nulla condimentum tempor.</div>
+                <div class="item">Mattis ut vitae feugiat augue.</div>
+                <div class="item">Cras ut metus a risus.</div>
+                <div class="item">Iaculis scelerisque eu ac ante.</div>
+                <div class="item">Fusce non varius purus aenean.</div>
+                <div class="item">Nec magna felis fusce vestibulum.</div>
+                <div class="item">Velit mollis odio sollicitudin lacinia.</div>
+            </div>
+        </div>
 
 
-    </div>
-<style>
-      #topBar {
-            position: absolute;
-            width: 100%;
-            background-color: #5696bc;
-            height: 40px;
-            top: 40px;
-          padding: 0 10px;
-      }
+        <style>
+                    #topBar {
+                        position: absolute;
+                        width: 100%;
+                        background-color: #5696bc;
+                        height: 40px;
+                        top: 40px;
+                        padding: 0 10px;
+                    }
 
-       #topBar #MegaMenuTrigger {
-           left: 0;
-           height: 40px;
-           width: 120px;
-           position: absolute;
-           border-radius: 0;
-       }
-         #breadcrumbs, #breadcrumbs a , #breadcrumbs .divider{
-             color: whitesmoke;
-         }
-      #breadcrumbs {
-          float: right;
-          line-height: 40px;
-          padding-right: 10px;
-      }
+                        #topBar #MegaMenuTrigger {
+                            left: 0;
+                            height: 40px;
+                            width: 120px;
+                            position: absolute;
+                            border-radius: 0;
+                        }
 
+                        #topBar #NearbyPages {
+                            left: 140px;
+                            height: 40px;
+                            width: 200px;
+                            position: absolute;
+                            border-radius: 0;
+                            text-align: left;
+                            padding-left: 35px;
+                            text-indent: -15px;
+                        }
 
-      #megaMenu {
-         font-family: myriad-pro, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      }
+                    #breadcrumbs, #breadcrumbs a, #breadcrumbs .divider {
+                        color: whitesmoke;
+                    }
 
-      #mmRightColumn .ui.menu a.item:not(:hover) {
-          color:rgba(0,0,0,.8) !important;
-      }
-      #mmRightColumn .ui.menu a.item:hover {
-          color:rgba(0,0,0,1);
-      }
-
-      #cardContainer > .item {
-         max-width: 250px;
-        /* apply only when more than 7 2nd tier items? 
-            or are 5 or more 2nd tier items with an average of 30 items?
-
-            apply custom max-widths by process ids?
-
-            we can controll process orders! :} (able to get short first if want)
-        */
-      } 
-
-</style>
-    <div id="content">
+                    #breadcrumbs {
+                        float: right;
+                        line-height: 40px;
+                        padding-right: 10px;
+                    }
 
 
+                    #megaMenu {
+                        font-family: myriad-pro, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    }
 
-<p>
-    <h3>Comments:</h3>
-Need to decide what to do for long catalog items : eg(100s) & many second tier items (horizontal scroll is not fun)*
-Easy enough to hide left menu on click if desired for space
+                    #mmRightColumn .ui.menu a.item:not(:hover) {
+                        color: rgba(0,0,0,.8) !important;
+                    }
 
-    <h3>TODO:</h3>
-Nearby pages drop/pop down with 2nd/3rd tier options
-Recent pages? dropdown with last N?
-</p>
+                    #mmRightColumn .ui.menu a.item:hover {
+                        color: rgba(0,0,0,1);
+                    }
 
-    </div>
+                    #cardContainer > .item {
+                        max-width: 250px;
+                        /* apply only when more than 7 2nd tier items?
+                or are 5 or more 2nd tier items with an average of 30 items?
+
+                apply custom max-widths by process ids?
+
+                we can controll process orders! :} (able to get short first if want)
+            */
+                    }
+        </style>
+        <div id="content">
 
 
-    <script src="libs/Jquery/jquery-2.1.3.js"></script>
-    <script src="libs/Semantic/semantic.js"></script>
-    <script src="libs/Jquery/Plugins/menuAim.js"></script>
 
-    <!-- Content Generation Libs -->
-    <script src="libs/Jquery/Plugins/uniqueId.js"></script>
-    <script src="libs/Jquery/Plugins/zenCoding.js"></script>
-    <script src="libs/lorem-ipsum.js/generator.js"></script>
-    <script src="js/cardGenerator.js"></script>
+            <p>
+                <h3>Comments:</h3>
+                Need to decide what to do for long catalog items : eg(100s) & many second tier items (horizontal scroll is not fun)*
+                Easy enough to hide left menu on click if desired for space
+                Nearby pages pulls nearby third tier items if on a third tier page
 
-    
-    <!-- Init -->
-    <script src="app/layout.js"></script>
+
+            <h3>TODO:</h3>
+                Correct Formatting, Integrate
+                Recent pages? dropdown with last N?
+
+
+
+        </div>
+
+
+        <script src="libs/Jquery/jquery-2.1.3.js"></script>
+        <script src="libs/Semantic/semantic.js"></script>
+        <script src="libs/Jquery/Plugins/menuAim.js"></script>
+
+        <!-- Content Generation Libs -->
+        <script src="libs/Jquery/Plugins/uniqueId.js"></script>
+        <script src="libs/Jquery/Plugins/zenCoding.js"></script>
+        <script src="libs/lorem-ipsum.js/generator.js"></script>
+        <script src="js/cardGenerator.js"></script>
+
+
+        <!-- Init -->
+        <script src="app/layout.js"></script>
 
 </body>
+
+
 
 </html>
 
